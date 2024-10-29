@@ -26,7 +26,7 @@ spec:
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ template "external-secrets.name" . }}
+    name: {{ template "external-secrets.fullname" . }}
   updatePolicy:
     updateMode: Auto
 ---
@@ -54,7 +54,7 @@ spec:
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ template "external-secrets.name" . }}-cert-controller
+    name: {{ template "external-secrets.fullname" . }}-cert-controller
   updatePolicy:
     updateMode: Auto
 ---
@@ -82,7 +82,7 @@ spec:
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ template "external-secrets.name" . }}-webhook
+    name: {{ template "external-secrets.fullname" . }}-webhook
   updatePolicy:
     updateMode: Auto
 {{ end }}
